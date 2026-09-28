@@ -1,19 +1,24 @@
-Titanic Survival Prediction
+# Titanic Survival Analysis
 
-A machine learning project that predicts passenger survival on the Titanic using the classic Kaggle Titanic dataset. Built as a hands-on exercise to practice the full ML workflow — data cleaning, feature engineering, and model building.
+A Jupyter notebook project exploring survival patterns in the Kaggle Titanic dataset. The current notebook covers exploratory data analysis and feature engineering; model training and evaluation are still to be completed.
 
-Project Overview
+## What the notebook covers
 
-This project explores the Titanic dataset to understand which factors most influenced passenger survival, then engineers features and trains classification models to predict survival outcomes for unseen passengers.
+- Checks dataset structure and missing values.
+- Explores survival patterns by passenger sex and ticket class.
+- Creates `FamilySize`, `IsAlone`, and `Title` features for further analysis.
 
-Dataset
+## Dataset
 
-The data comes from the Kaggle Titanic competition and includes:
+The project uses the Kaggle Titanic files in `data/`:
 
-data/train.csv — training data with known survival outcomes
-data/test.csv — test data for generating predictions
-data/gender_submission.csv — sample submission format
-Project Structure
+- `train.csv` — training data with survival labels.
+- `test.csv` — test data for predictions.
+- `gender_submission.csv` — sample submission format.
+
+## Project structure
+
+```text
 Titanic-survival-prediction/
 ├── data/
 │   ├── train.csv
@@ -22,24 +27,37 @@ Titanic-survival-prediction/
 ├── notebook/
 │   └── titanic_analysis.ipynb
 └── README.md
-Approach
-Exploratory Data Analysis (EDA) — understanding distributions, missing values, and relationships between features and survival.
-Feature Engineering:
-FamilySize — combining SibSp and Parch to capture total family members aboard
-IsAlone — flag for passengers traveling without family
-Title — extracted from passenger names (Mr, Mrs, Miss, Master, etc.) as a proxy for social status and age group
-Model Building (in progress) — training and evaluating classification models (e.g., Logistic Regression, Random Forest, KNN) to predict survival.
-Evaluation — using metrics like accuracy, precision, recall, and F1 score to assess model performance.
-Tools & Libraries
-Python
-pandas, NumPy
-scikit-learn
-matplotlib / seaborn (for visualization)
-Jupyter Notebook
-Status
+```
 
-🚧 Work in progress — feature engineering complete, model building and evaluation next.
+## Setup and run
 
-Author
+Create an environment, install the notebook dependencies, and open Jupyter from the repository root:
 
-Mohit Mahato — GitHub
+```bash
+python -m venv .venv
+```
+
+On Windows, activate it with:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+On macOS or Linux, activate it with:
+
+```bash
+source .venv/bin/activate
+```
+
+Install dependencies and start the notebook:
+
+```bash
+python -m pip install numpy pandas matplotlib seaborn scikit-learn jupyter
+jupyter notebook notebook/titanic_analysis.ipynb
+```
+
+> **Path note:** The notebook currently uses absolute Windows paths for the training CSV and a saved plot. Replace those paths with paths that match your local checkout before running it.
+
+## Current status
+
+**In progress.** Exploratory analysis and initial feature engineering are present in the notebook. A trained classifier, evaluation metrics, and prediction workflow have not been added yet.

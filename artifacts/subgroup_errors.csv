@@ -1,0 +1,6 @@
+feature,group,n,errors,accuracy
+Sex,female,61,11,0.81967213
+Sex,male,118,18,0.84745763
+Pclass,1,45,10,0.77777778
+Pclass,2,34,3,0.91176471
+Pclass,3,100,16,0.84000000

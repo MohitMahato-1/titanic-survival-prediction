@@ -1,0 +1,43 @@
+{
+  "selected_model": "logistic_regression",
+  "holdout_rows": 179,
+  "threshold": 0.5,
+  "positive_class": "Survived=1",
+  "model": {
+    "accuracy": 0.8379888268156425,
+    "balanced_accuracy": 0.822266139657444,
+    "precision": 0.8125,
+    "recall": 0.7536231884057971,
+    "f1": 0.7819548872180451,
+    "roc_auc": 0.8799736495388669,
+    "confusion_matrix": [
+      [
+        98,
+        12
+      ],
+      [
+        17,
+        52
+      ]
+    ]
+  },
+  "dummy_majority": {
+    "accuracy": 0.6145251396648045,
+    "balanced_accuracy": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.5,
+    "confusion_matrix": [
+      [
+        110,
+        0
+      ],
+      [
+        69,
+        0
+      ]
+    ]
+  },
+  "note": "One fixed holdout. No threshold tuning on holdout; no Kaggle test labels are available."
+}

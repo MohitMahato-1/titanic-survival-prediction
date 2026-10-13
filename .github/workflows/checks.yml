@@ -1,0 +1,28 @@
+name: Reproduce and test
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m pytest -q
+      - name: Reproduce the complete workflow
+        run: |
+          python titanic.py eda
+          python titanic.py train
+          python titanic.py evaluate
+          python titanic.py predict
+      - run: python scripts/execute_notebook.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: titanic-results
+          path: |
+            artifacts/*.csv
+            artifacts/*.json
+            artifacts/*.png
+            images/*.png

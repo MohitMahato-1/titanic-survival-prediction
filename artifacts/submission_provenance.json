@@ -1,0 +1,7 @@
+{
+  "selected_model": "logistic_regression",
+  "fit_rows": 891,
+  "prediction_rows": 418,
+  "test_data_sha256": "56023b9948236f3c7a1c9448fcf418b283e109ef177fa8c7e069158dd7dd52b2",
+  "evaluation": "Unlabeled predictions only. No Kaggle score has been obtained."
+}
